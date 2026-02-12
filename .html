@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Deyon ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #ff9ec4, #ff4f81);
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    text-align: center;
+    color: white;
+}
+
+/* Password Screen */
+#lockScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #ff4f81;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #ff4f81;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    color: #fff;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Typing Animation */
+#typing {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+    height: 40px;
+}
+
+/* Photos */
+.photo {
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+
+/* Final Message */
+.final-message {
+    margin: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Password Lock -->
+<div id="lockScreen">
+    <h2>Enter Password 💘</h2>
+    <p><i>Hint: Only you can open it</i></p>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button onclick="checkPassword()">Open</button>
+</div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="romantic-music.mp3" type="audio/mpeg">
+</audio>
+
+<h1>For My Love Deyon ❤️</h1>
+
+<div id="typing"></div>
+
+<img src="IMG_7407.jpg" class="photo">
+<img src="IMG_8328.JPEG" class="photo">
+<img src="IMG-20260207-WA0019.jpg" class="photo">
+
+<div class="final-message">
+    I'm never gonna leave you, I'll never stop loving you and I'll stay by your side FOREVER!!!!  
+    <br><br>
+    I LOVE YOU SO MUCH BABYYY! 😭💘
+</div>
+
+<div class="footer">
+    From Your Ru Ruu Babyy 💖
+</div>
+
+<script>
+// Password Function
+function checkPassword() {
+    var password = document.getElementById("passwordInput").value;
+    if(password === "1222") {
+        document.getElementById("lockScreen").style.display = "none";
+    } else {
+        alert("Wrong password baby 🥺 Try again!");
+    }
+}
+
+// Typing Animation
+var text = "I love you Deyon ❤️";
+var i = 0;
+function typingEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 100);
+    }
+}
+typingEffect();
+
+// Floating Hearts Generator
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
